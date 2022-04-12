@@ -1,4 +1,5 @@
 {
+  "homepage": "https://rn0529.github.io/Assignment3/",
   "name": "assignment3",
   "version": "0.1.0",
   "private": true,
@@ -10,10 +11,13 @@
     "react-scripts": "5.0.0"
   },
   "scripts": {
+    
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": [
@@ -34,6 +38,7 @@
     ]
   },
   "devDependencies": {
+    "gh-pages": "^3.2.3",
     "web-vitals": "^2.1.4"
   }
 }
