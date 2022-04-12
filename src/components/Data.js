@@ -3,6 +3,8 @@ import axios from 'axios';
 class Data extends React.Component {
     constructor(props) {
       super(props);
+      this.handleDebit = this.handleDebit.bind(this)
+      this.handleCredit = this.handleCredit.bind(this)
       this.state = {
           debits : [],
           credit : [],
@@ -23,19 +25,21 @@ class Data extends React.Component {
     }
   
     handleDebit() {
-      this.setState({selected: "debit"});
+      this.setState({selected : "debit"});
     }
   
     handleCredit() {
-      this.setState({selected: "credit"});
+      console.log(this.state.selected)
+      this.setState({selected : "credit"});
+      
     }
 
-
     render() {
-      if(this.state.selected=='debit'){
+      console.log(this.state.selected)
+      if(this.state.selected==="debit"){
         return(
             <div>
-              <button>View Credit</button>
+              <button onClick={this.handleCredit}>View Credit</button>
               <ul>
                 {
                   this.state.debits
@@ -46,23 +50,25 @@ class Data extends React.Component {
               </ul>
             </div>
 
-        )
-      }
-      return (
-            <div>
-              <button>View Debit</button>
-              <ul>
-                {
-                  this.state.credit
-                    .map(credit =>
-                      <li key={credit.id}>{credit.description} | {credit.amount} </li>
-                    )
-                }
-              </ul>
-            </div>
-      
+        );
+      }else{
+        return (
+          <div>
+            <button onClick={this.handleDebit}>View Debit</button>
+            <ul>
+              {
+                this.state.credit
+                  .map(credit =>
+                    <li key={credit.id}>{credit.description} | {credit.amount} </li>
+                  )
+              }
+            </ul>
+          </div>
+    
 
-      );
+    );
+      }
+     
     }
   }
   
