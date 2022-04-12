@@ -44,7 +44,7 @@ class Data extends React.Component {
                 {
                   this.state.debits
                     .map(debits =>
-                      <li key={debits.id}>{debits.description} | {debits.amount} </li>
+                      <li style={{listStylePosition: "inside"}} key={debits.id}>{debits.description} | {debits.amount} </li>
                     )
                 }
               </ul>
@@ -59,7 +59,7 @@ class Data extends React.Component {
               {
                 this.state.credit
                   .map(credit =>
-                    <li key={credit.id}>{credit.description} | {credit.amount} </li>
+                    <li style={{listStylePosition: "inside"}} key={credit.id}>{credit.description} | {credit.amount} </li>
                   )
               }
             </ul>
