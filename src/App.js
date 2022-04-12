@@ -11,7 +11,6 @@ function App() {
       
       <Clock />
       <Edit />
-      <Welcome />
       <Data />
 
     </div>
