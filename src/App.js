@@ -1,11 +1,15 @@
 import logo from './logo.svg';
 import './App.css';
-import Clock from './Clock';
+import Clock from './components/Clock';
+import Welcome from './components/Welcomeuser';
+
 function App() {
   return (
     <div className="App">
-      <h1>Hello</h1>
+      
       <Clock />
+      <Welcome />
+
     </div>
   );
 }
