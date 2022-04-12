@@ -9,6 +9,7 @@ class Edit extends React.Component {
       this.handleChangeClose = this.handleChangeClose.bind(this)
       this.handleNameChange = this.handleNameChange.bind(this)
       this.handleColorChange = this.handleColorChange.bind(this)
+      this.handleTextColorChange = this.handleTextColorChange.bind(this)
       this.state = {
          selected : false,
          userName : "UserName"
@@ -34,6 +35,13 @@ class Edit extends React.Component {
         props.preventDefault();
         console.log(props.target.color.value)
         document.body.style.backgroundColor = props.target.color.value
+        this.handleChangeClose()
+    }
+    handleTextColorChange(props){
+        props.preventDefault();
+        console.log(props.target.color.value)
+        document.body.style.color = props.target.color.value
+        this.handleChangeClose()
     }
     
 
@@ -43,6 +51,8 @@ class Edit extends React.Component {
         return(
             
             <div >
+                <p>The changes will only happen one at a time</p>
+                <p>The hex values must have a # before the numbers! :)</p>
                 <form onSubmit={this.handleNameChange}>
                     <label>
                         Change Username: 
@@ -59,15 +69,15 @@ class Edit extends React.Component {
                     <button type="submit">Change</button>
                     
                 </form>
-                <form onSubmit={this.handleColorChange}>
+                <form onSubmit={this.handleTextColorChange}>
                     <label>
-                        ChangeBackgroundColor: 
+                        ChangeTextColor: 
                         <input type="text" name="color" />
                     </label>
                     <button type="submit">Change</button>
                     
                 </form>
-                <h1>pog!</h1>
+               
                 <Welcome userName={this.state.userName}/>
                 <button onClick={this.handleChangeClose}>Edit Profile</button>
             </div>
